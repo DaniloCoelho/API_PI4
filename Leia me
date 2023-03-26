@@ -44,3 +44,7 @@ http://localhost/PI_api/public_html/api/transacoes/1   -> retorna um trasancoes
 http://localhost/PI_api/public_html/api/estacionamento -> retorna todos estacionamento
 
 http://localhost/PI_api/public_html/api/estacionamento/1 -> retorna um estacionamento 
+
+
+
+Ainda não foi possivel relizar o metodo delete 
