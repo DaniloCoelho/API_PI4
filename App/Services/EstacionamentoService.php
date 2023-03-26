@@ -14,13 +14,20 @@
             }
         }
 
-        public function post() 
-        {
+        public function post($id = null) 
+        {   
             $data = $_POST;
-
-            return Estacionamento::insert($data);
+            if ($id) {
+                
+                return Estacionamento::update($id[0] ,$data);
+                
+            } else {
+                
+                return Estacionamento::insert($data);
+            }
+            
         }
-
+        /*
         public function update() 
         {
             
@@ -30,4 +37,5 @@
         {
             
         }
+        */
     }

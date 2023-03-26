@@ -14,13 +14,22 @@
             }
         }
 
-        public function post() 
-        {
+        public function post($id = null) 
+        {   
             $data = $_POST;
+            if ($id) {
+                
+                return Transacoes::update($id[0] ,$data);
+                
+            } else {
+                
+                return Transacoes::insert($data);
+            }
+            
 
-            return Transacoes::insert($data);
+            
         }
-
+        /*
         public function update() 
         {
             
@@ -30,4 +39,5 @@
         {
             
         }
+        */
     }

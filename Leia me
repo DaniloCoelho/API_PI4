@@ -1,0 +1,46 @@
+Essa API funciona com método POST e metodo GET
+
+No método POST é possivel atualizar e cadastrar usuario , veiculo , estacionamento e transação
+
+quando é passado o id é para atualizar cadaastro 
+
+
+
+http://localhost/PI_api/public_html/api/veiculo   -> cadastrar veiculo
+
+http://localhost/PI_api/public_html/api/veiculo/2  -> atualizar veiculo
+
+http://localhost/PI_api/public_html/api/user        -> cadastrar usuario
+
+http://localhost/PI_api/public_html/api/user/2      -> atualizar usuario
+
+http://localhost/PI_api/public_html/api/transacoes    -> cadastrar transacoes  
+
+http://localhost/PI_api/public_html/api/transacoes/1   -> atualizar trasancoes  , vai ser usado qdo a transacao for finalizada
+
+http://localhost/PI_api/public_html/api/estacionamento -> cadastrar estacionamento
+
+http://localhost/PI_api/public_html/api/estacionamento/1 -> atualizar estacionamento , vai ser usado quando for mudar estado se há vagas disponiveis
+
+
+
+No metodo GET são apenas SELECTs , se informar o id vem um dado especifico , senao vem todos .
+
+será muito usado paara ver status de vagas de estacionamento e status de transacoes
+
+
+http://localhost/PI_api/public_html/api/veiculo   -> retorna todos veiculo
+
+http://localhost/PI_api/public_html/api/veiculo/2  -> retorna um veiculo
+
+http://localhost/PI_api/public_html/api/user        -> retorna todos usuario
+
+http://localhost/PI_api/public_html/api/user/2      -> retorna um usuario
+
+http://localhost/PI_api/public_html/api/transacoes    -> retorna todos transacoes  
+
+http://localhost/PI_api/public_html/api/transacoes/1   -> retorna um trasancoes  
+
+http://localhost/PI_api/public_html/api/estacionamento -> retorna todos estacionamento
+
+http://localhost/PI_api/public_html/api/estacionamento/1 -> retorna um estacionamento 

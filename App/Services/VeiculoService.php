@@ -14,13 +14,22 @@
             }
         }
 
-        public function post() 
-        {
+        public function post($id = null) 
+        {   
             $data = $_POST;
+            if ($id) {
+                
+                return Veiculo::update($id[0] ,$data);
+                
+            } else {
+                
+                return Veiculo::insert($data);
+            }
+            
 
-            return Veiculo::insert($data);
+            
         }
-
+        /*
         public function update() 
         {
             
@@ -30,4 +39,5 @@
         {
             
         }
+        */
     }
