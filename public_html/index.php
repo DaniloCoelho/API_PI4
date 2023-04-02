@@ -1,19 +1,40 @@
 <?php
-    //header('Content-Type: application/json');
+    //header('Content-Type: application/json; charset=UTF-8');
 
     require_once '../vendor/autoload.php';
+
+    use App\Rest;
 
     // api/users/1
     if ($_GET['url']) {
         $url = explode('/', $_GET['url']);
-        echo $_GET['url']."<br>";
+        //echo $_GET['url']."<br>";
 
-        print_r($url) ;
+        //print_r($url) ;
         if ($url[0] === 'api') {
-            array_shift($url);
+            
+            
+            if ($url[1] === 'auth') {
+                //print_r($_POST);
+                //echo "<br>entrou no === auth<br>";
+                $service = 'App\Models\\'.ucfirst($url[0]).'Controller';
+                array_shift($url);
+                if (isset($_REQUEST) && !empty($_REQUEST)) {
+                    $rest = new Rest($_REQUEST);
+                    echo $rest->run();
+                    
+                    
+                    //echo "voltou no index no index <br>";
+                    exit;
+                }
+            }else{
+                array_shift($url);
+                $service = 'App\Services\\'.ucfirst($url[0]).'Service';
+                array_shift($url);
+            }
+            
 
-            $service = 'App\Services\\'.ucfirst($url[0]).'Service';
-            array_shift($url);
+
 
             $method = strtolower($_SERVER['REQUEST_METHOD']);
 

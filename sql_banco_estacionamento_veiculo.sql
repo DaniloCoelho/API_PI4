@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`usuario` (
   `datanasc` VARCHAR(45) NOT NULL,
   `genero` VARCHAR(45) NOT NULL,
   `avaliacao_media` INT NOT NULL,
-  `password` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`idusuario`))
 ENGINE = InnoDB;
 

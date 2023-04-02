@@ -48,3 +48,14 @@ http://localhost/PI_api/public_html/api/estacionamento/1 -> retorna um estaciona
 
 
 Ainda não foi possivel relizar o metodo delete 
+
+
+----Autenticação foi feita com JWT 
+onde é enviado email e password , entao checa no banco se o usuario e senha batem , se sim cria um token e salva no localstorage do navegador
+
+Após o login as requisiçoes deveram ter em seus cabeçalhos 
+    headers: { 'Authorization': 'Bearer ' + localStorage.getItem('user_token_jwt') } 
+
+Essa função localStorage.getItem('user_token_jwt') busca o token no nnovegador e valida. Por enquanto só consegui enviar esse cabeçalho com ajax.
+
+
